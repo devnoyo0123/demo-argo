@@ -5,7 +5,7 @@ on:
         - main
 jobs:
   ci-cd-pipeline:
-    name: job1
+    name: ci-cd
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
