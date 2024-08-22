@@ -10,6 +10,12 @@ plugins {
 }
 
 jib {
+    from {
+        image = "amazoncorretto:17-jre"
+    }
+    to {
+        image = "devnoyo0123/argo-demo"
+    }
     container {
         jvmFlags = arrayOf("-Dspring.profiles.active=local","-Xms3g", "-Xmx3g").toMutableList()
         ports = arrayOf("8080").toMutableList()

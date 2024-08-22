@@ -30,7 +30,6 @@ jobs:
       - name: Build with Gradle and Jib
         run: |
             ./gradlew \
-              -PcontainerImage=${{ secrets.DOCKER_REPOSITORY }} \
               -PimageTag=${{ steps.generate-uuid.outputs.UUID }} \
               jib \
               --no-daemon
