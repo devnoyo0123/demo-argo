@@ -10,12 +10,6 @@ plugins {
 }
 
 jib {
-    from {
-        image = "eclipse-temurin:17-jre"
-    }
-    to {
-        image = "demo-argo"
-    }
     container {
         jvmFlags = arrayOf("-Dspring.profiles.active=local","-Xms3g", "-Xmx3g").toMutableList()
         ports = arrayOf("8080").toMutableList()
