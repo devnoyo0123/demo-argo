@@ -11,7 +11,7 @@ plugins {
 
 jib {
     from {
-        image = "amazoncorretto:17-jre"
+        image = "eclipse-temurin:17-jre"
     }
     to {
         image = "devnoyo0123/argo-demo"
