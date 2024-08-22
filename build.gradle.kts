@@ -47,6 +47,10 @@ dependencies {
 
     annotationProcessor("com.querydsl:querydsl-apt:5.0.0:jakarta")
 
+    val mockkVersion = "1.13.8"
+    testImplementation("io.mockk:mockk:${mockkVersion}")
+    var kotestVersion = "5.8.0"
+    testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("org.springframework.kafka:spring-kafka-test")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.batch:spring-batch-test")
