@@ -6,7 +6,22 @@ plugins {
     kotlin("jvm") version "1.7.22"
     kotlin("plugin.spring") version "1.7.22"
     kotlin("plugin.jpa") version "1.7.22"
+    id("com.google.cloud.tools.jib") version "3.4.3"
 }
+
+jib {
+    from {
+        image = "eclipse-temurin:17-jre"
+    }
+    to {
+        image = "demo-argo"
+    }
+    container {
+        jvmFlags = arrayOf("-Dspring.profiles.active=local","-Xms3g", "-Xmx3g").toMutableList()
+        ports = arrayOf("8080").toMutableList()
+    }
+}
+
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
@@ -15,6 +30,8 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 repositories {
     mavenCentral()
 }
+
+
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
