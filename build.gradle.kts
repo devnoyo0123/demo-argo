@@ -11,7 +11,7 @@ plugins {
 
 jib {
     from {
-        image = "eclipse-temurin:17-jre"
+        image = "eclipse-temurin:17-jre-alpine"
     }
     to {
         image = "devnoyo0123/argo-demo"
